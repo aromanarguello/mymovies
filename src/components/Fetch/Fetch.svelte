@@ -1,16 +1,13 @@
 <script>
   import { onMount } from "svelte";
-
+  export let url;
   let popularMovies = [];
 
   onMount(async () => {
-    const res = await fetch(
-      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<API_KEY>"
-    );
+    const res = await fetch(url);
     const json = await res.json();
     popularMovies = json.results;
   });
-  console.log(popularMovies);
 </script>
 
 <slot {popularMovies} />
