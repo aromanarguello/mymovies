@@ -1,9 +1,9 @@
 <script>
-  import Card from "./components/Card/Card.svelte";
-  import Fetch from "./components/Fetch/Fetch.svelte";
+  import Card from './components/Card/Card.svelte';
+  import Fetch from './components/Fetch/Fetch.svelte';
 
   let movieUrl =
-    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d3b25ee456f5215bfcc51aa849aad377";
+    'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d3b25ee456f5215bfcc51aa849aad377';
 </script>
 
 <style>
