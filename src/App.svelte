@@ -3,7 +3,7 @@
   import Fetch from './components/Fetch/Fetch.svelte';
 
   let movieUrl =
-    'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=';
+    'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d3b25ee456f5215bfcc51aa849aad377';
 </script>
 
 <style>
