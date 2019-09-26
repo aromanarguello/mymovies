@@ -1,13 +1,13 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
   export let url;
-  let popularMovies = [];
+  let data = [];
 
   onMount(async () => {
     const res = await fetch(url);
     const json = await res.json();
-    popularMovies = json.results;
+    data = json.results;
   });
 </script>
 
-<slot {popularMovies} />
+<slot {data} />

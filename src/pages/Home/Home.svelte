@@ -15,9 +15,9 @@
 </style>
 
 <h2>Top 20 popular movies:</h2>
-<Fetch let:popularMovies url={movieUrl}>
+<Fetch let:data url={movieUrl}>
   <ul class="card-list">
-    {#each popularMovies as movie}
+    {#each data as movie}
       <Card {movie} />
     {/each}
   </ul>

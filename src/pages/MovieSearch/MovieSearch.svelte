@@ -1,12 +1,23 @@
 <script>
-  let searchTerm = undefined;
+  import SearchForm from '../../components/SearchForm/SearchForm.svelte';
 
-  const handleSearch = () => console.log('wooohooo!');
+  let movies = [];
+  let searchTerm = '';
+  const handleFormSubmit = async () => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=d3b25ee456f5215bfcc51aa849aad377&query=${searchTerm}&language=en-US`
+    );
+    const json = await res.json();
+    movies = json;
+    console.log(movies.results);
+  };
+
+  const handleSearch = ({ target: { value } }) => (searchTerm = value);
 </script>
 
-<h2>Hiii</h2>
-<form on:submit|preventDefault={() => handleSearch()}>
-  <label for="movie-search">Search movie:</label>
-  <input type="text" name="movie-search" id="movie-search" />
-  <button type="submit">Search</button>
-</form>
+<SearchForm {handleFormSubmit} {handleSearch} />
+<ul>
+  {#each movies.results as movie}
+    <li>{movie.title}</li>
+  {/each}
+</ul>

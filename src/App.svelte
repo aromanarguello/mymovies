@@ -19,11 +19,17 @@
 <Router {url}>
   <header>
     <h1>MyMovies</h1>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/search">Search</Link>
-    </nav>
   </header>
+  <nav>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/search">Search</Link>
+      </li>
+    </ul>
+  </nav>
   <main>
     <Route path="/" component={Home} />
     <Route path="/search" component={MovieSearch} />
