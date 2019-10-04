@@ -1,5 +1,7 @@
 <script>
   import SearchForm from '../../components/SearchForm/SearchForm.svelte';
+  import Card from '../../components/Card/Card.svelte';
+  import MoviesCard from '../../components/Card/MoviesCard.svelte';
 
   let movies = [];
   let searchTerm = '';
@@ -9,15 +11,24 @@
     );
     const json = await res.json();
     movies = json.results;
-    console.log(movies);
   };
 
   const handleSearch = ({ target: { value } }) => (searchTerm = value);
 </script>
 
+<style>
+  li {
+    list-style-type: none;
+  }
+</style>
+
 <SearchForm {handleFormSubmit} {handleSearch} />
 <ul>
   {#each movies as movie}
-    <li>{movie.title}</li>
+    <li>
+      <Card>
+        <MoviesCard {movie} />
+      </Card>
+    </li>
   {/each}
 </ul>
