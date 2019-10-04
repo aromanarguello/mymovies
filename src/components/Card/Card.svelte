@@ -1,15 +1,10 @@
-<script>
-  import CardDetails from './CardDetails.svelte';
-</script>
-
 <style>
-  li {
+  div {
     width: 300px;
-    height: 350ps;
+    height: 350px;
     -webkit-box-shadow: 0px 0px 10px 3px rgba(176, 176, 176, 0.72);
     -moz-box-shadow: 0px 0px 10px 3px rgba(176, 176, 176, 0.72);
     box-shadow: 0px 0px 10px 3px rgba(176, 176, 176, 0.72);
-    list-style: none;
     display: grid;
     grid-template-rows: 0.5fr 1fr;
     margin-bottom: 25px;
@@ -17,6 +12,6 @@
   }
 </style>
 
-<li class="card-item">
+<div class="card-item">
   <slot>Sorry!</slot>
-</li>
+</div>
