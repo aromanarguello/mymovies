@@ -1,6 +1,6 @@
 <script>
   export let movieDetail;
-  export let toggleCard;
+  export let toggleBack;
 </script>
 
 <style>
@@ -48,4 +48,4 @@
   </p>
 </section>
 <p class="movie-overview">{movieDetail.overview}</p>
-<button on:click={() => toggleCard()} class="btn-more-info">Back</button>
+<button on:click={() => toggleBack()} class="btn-more-info">Back</button>

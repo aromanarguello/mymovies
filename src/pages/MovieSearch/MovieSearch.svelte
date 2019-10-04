@@ -8,8 +8,8 @@
       `https://api.themoviedb.org/3/search/movie?api_key=d3b25ee456f5215bfcc51aa849aad377&query=${searchTerm}&language=en-US`
     );
     const json = await res.json();
-    movies = json;
-    console.log(movies.results);
+    movies = json.results;
+    console.log(movies);
   };
 
   const handleSearch = ({ target: { value } }) => (searchTerm = value);
@@ -17,7 +17,7 @@
 
 <SearchForm {handleFormSubmit} {handleSearch} />
 <ul>
-  {#each movies.results as movie}
+  {#each movies as movie}
     <li>{movie.title}</li>
   {/each}
 </ul>

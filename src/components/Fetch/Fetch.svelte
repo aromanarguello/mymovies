@@ -8,6 +8,8 @@
     const json = await res.json();
     data = json.results;
   });
+
+  console.log(data);
 </script>
 
 <slot {data} />
